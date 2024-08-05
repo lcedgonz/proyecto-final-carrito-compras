@@ -1,0 +1,38 @@
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Crear Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0.8em; border:none; background:none;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form id="productForm" action="/admin/productos" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="nombre" style="margin-bottom: 0.8rem;">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="precio" style="margin-bottom: 0.8rem; margin-top: 0.8rem;">Precio</label>
+            <input type="number" class="form-control" id="precio" name="precio" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="cantidad" style="margin-bottom: 0.8rem; margin-top: 0.8rem;">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" required>
+          </div>
+          <div class="form-group">
+            <label for="descripcion" style="margin-bottom: 0.8rem; margin-top: 0.8rem;">Descripción</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageurl" style="margin-bottom: 0.8rem; margin-top: 0.8rem;">Imagen del Producto</label>
+            <input type="file" class="form-control" id="imageurl" name="imageurl">
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 0.8rem;">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/productModal.js"></script>

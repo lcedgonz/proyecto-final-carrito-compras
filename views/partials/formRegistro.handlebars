@@ -1,0 +1,69 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">¡Decídete
+        ahora! #Compra PUCMM</h1>
+      <p class="col-lg-10 fs-4" style="text-align: justify;">Regístrate hoy en
+        la tienda oficial de la universidad y accede a un gran catálogo de
+        artículos exclusivos. Tenemos todo lo que necesitas para mostrar tu
+        orgullo universitario. ¡No esperes más y crea tu cuenta ahora!</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form
+        class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+        id="formRegistro"
+        data-bitwarden-watching="1"
+      >
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="registerUsername"
+            placeholder="Nombre de usuario"
+            required
+          />
+          <label for="registerUsername">Nombre de usuario</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="registerPassword"
+            placeholder="Contraseña"
+            required
+            autocomplete="new-password"
+          />
+          <label for="registerPassword">Contraseña</label>
+        </div>
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="registerRememberMe"
+          />
+          <label class="form-check-label" for="registerRememberMe">
+            Recuérdame
+          </label>
+        </div>
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          type="submit"
+        >Registrarse</button>
+        <div
+          id="registerErrorMessage"
+          class="text-danger mt-2"
+          style="display: none;"
+        ></div>
+        <div
+          id="registerSuccessMessage"
+          class="text-success mt-2"
+          style="display: none;"
+        ></div>
+        <hr class="my-4" />
+        <small class="text-body-secondary">Al cliquear en Registrarse, estás
+          aceptando los términos de uso.</small>
+      </form>
+
+    </div>
+  </div>
+</div>

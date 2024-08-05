@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1>¡Bienvenido a la Tienda PUCMM!</h1>
+    <p>Explora nuestro catálogo de productos y lleva a casa un pedacito de la universidad.</p>
+  </div>
+  <div class="row justify-content-center">
+    {{#each productos}}
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="/images/productos/{{this.imageurl}}" class="card-img-top" alt="{{this.nombre}}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{this.nombre}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Precio: RD${{this.precio}}</h6>
+          <button class="btn btn-link p-0 text-decoration-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#descripcion{{this.id}}" aria-expanded="false" aria-controls="descripcion{{this.id}}">
+            Descripción
+          </button>
+          <div class="collapse" id="descripcion{{this.id}}">
+            <p class="card-text" style="font-size: 0.9rem; text-align: justify;">{{this.descripcion}}</p>
+          </div>
+          <div class="mt-auto">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Cantidad:</span>
+              <input type="number" class="form-control" value="1" min="1" id="cantidad{{this.id}}">
+            </div>
+            <a href="javascript:void(0);" class="btn btn-primary"
+              onclick="agregarAlCarrito({{this.id}}, '{{this.nombre}}', {{this.precio}})">Agregar ahora</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{> loginModal}}
+{{> carritoModal}}
+<script src="/js/carrito.js"></script>

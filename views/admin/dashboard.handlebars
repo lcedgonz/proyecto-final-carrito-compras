@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <h1 class="text-center">Bienvenido al Dashboard de Tienda PUCMM, {{user.username}}.</h1>
+  <br>
+  <p class="text-center">Aquí están tus estadísticas y tareas pendientes.</p>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-box-seam"></i> Productos en Tienda</h5>
+              <p class="card-text fs-4">{{productosCount}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-cart-check"></i> Ventas Realizadas</h5>
+              <p class="card-text fs-4">{{ventasCount}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-currency-dollar"></i> Ingresos Totales</h5>
+              <p class="card-text fs-4">RD${{revenue}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-person-fill"></i> Usuarios Registrados</h5>
+              <p class="card-text fs-4">{{usuariosCount}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="task-card">
+        <div class="task-header">
+          <h5>Lista de Tareas</h5>
+        </div>
+        <div class="task-body">
+          <ul class="task-list" id="task-list">
+            {{#each tasks}}
+            <li class="task-item {{#if this.completed}}completed{{/if}}">
+              <div class="task-content">
+                <input type="checkbox" class="form-check-input task-checkbox" data-task-id="{{this.id}}" {{#if
+                  this.completed}}checked{{/if}}>
+                <label class="task-label {{#if this.completed}}text-decoration-line-through{{/if}}"
+                  for="task-{{this.id}}">
+                  {{this.task_text}}
+                </label>
+              </div>
+              <button class="btn task-delete-btn" data-task-id="{{this.id}}">Eliminar</button>
+            </li>
+            {{/each}}
+          </ul>
+          <div class="input-group mt-3">
+            <input type="text" class="form-control" id="task-input" placeholder="Nueva tarea...">
+            <button class="btn btn-primary" id="task-add-button">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>

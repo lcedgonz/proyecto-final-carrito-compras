@@ -1,0 +1,62 @@
+<div class="d-flex flex-column min-vh-100">
+  <main class="flex-grow-1 container mt-5">
+    <h1 class="mb-4">Mi Carrito</h1>
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Datos del Cliente</h5>
+        <hr>
+        <div class="form-group">
+          <label for="customerName">Nombre del Cliente:</label>
+          <input type="text" id="customerName" class="form-control" placeholder="Ingresa el nombre del cliente" required>
+        </div>
+      </div>
+    </div>
+    <div id="carritoContainer" class="mt-4">
+      {{#if cart.length}}
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each cart}}
+          <tr>
+            <td>{{this.nombre}}</td>
+            <td>
+              <input type="number" class="form-control" value="{{this.cantidad}}" min="1" onchange="actualizarCantidad({{this.id}}, this.value)">
+            </td>
+            <td>RD${{this.precio}}</td>
+            <td>RD${{multiply this.precio this.cantidad}}</td>
+            <td>
+              <button class="btn btn-danger" onclick="eliminarDelCarrito({{this.id}})">Eliminar</button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="text-end fw-bold">Total:</td>
+            <td class="fw-bold">RD${{calculateTotal cart}}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-secondary" onclick="limpiarCarrito()">Limpiar Carrito</button>
+        <button class="btn btn-primary" onclick="procesarCompra()">Procesar Compra</button>
+      </div>
+      {{else}}
+      <p>Tu carrito está vacío.</p>
+      {{/if}}
+    </div>
+  </main>
+</div>
+{{> loginModal}}
+{{> carritoModal}}
+<script src="/js/login.js"></script>
+<script src="/js/carrito.js"></script>
