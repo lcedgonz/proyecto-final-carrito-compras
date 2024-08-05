@@ -76,4 +76,15 @@ CREATE TABLE products (
   stock INTEGER NOT NULL
 );
 ```
-4. Inicia la web app:
+Hay más tablas, pero esas se irán creando con la necesidad.
+
+4. Inicia la web app.
+
+## Comentarios de los autores
+### ¡Hola, soy Laura!
+Hey, eh. Este proyecto tomó algo de tiempo y esfuerzo.
+Sin embargo, esperamos seguir trabajando en él, puesto que aún hay trabajo por hacer. 
+Bastante trabajo. 
+Pero ha sido hecho con amor y empeño.
+Thanks for reading this!
+Au revouir. 
